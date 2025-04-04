@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main(){
+
+    int a=0;
+    int b=0;
+    char islem = '+';
+
+    cout<<"bir a sayisi giriniz:"<<endl;
+    cin>>a;
+
+    cout<<  "bir b sayısı giriniz"<<endl;
+    cin>>b;
+    
+    cout<<"bir islem giriniz:"<<endl;
+    cin>>islem;
+
+    if(islem == '+'){
+        cout<<"\ntoplam:"<<a+b;
+    }
+    else if(islem=='-'){
+        cout<<"çıkartma işlemi yapılıyor...\n"<<"sonuç:"<<a-b<<endl;
+    }
+    else if(islem=='*'){
+        cout<<"çarpma işlemi yapılıyor...\n"<<"sonuç:"<<a*b<<endl;
+    }
+    else if(islem =='/'){
+        cout<<"bölme işlemi yapılıyor...\n"<<"sonuç:"<<a/b<<endl;
+    }
+    else{
+        cout<<"işlem yapılamıyor."<<endl;
+    }
+}

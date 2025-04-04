@@ -1,0 +1,32 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+// int topla(int a, int b){
+//     return a+b;
+// }
+
+// // int ne türden değer döndürecek , *f' adında pointer int tipinde, parametre türleri
+// int getir( int(*fint)(int,int) ){ 
+//     int a = fint(10,12);
+//     return a;
+// }
+
+
+// int main(){
+//     int b = getir(topla);
+//     cout<< b;
+// }
+
+using fint = int(*)(int, int);
+int topla(int a, int b){
+    return a+b;
+}
+int getir(fint f){
+    int a = f(16,19);
+    return a;
+}
+int main(){
+    int b = getir(topla);
+    cout<< b;
+}

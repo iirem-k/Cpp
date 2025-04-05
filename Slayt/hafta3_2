@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+void starline();
+int main(){
+    starline(); // fonksiyonu çağırma
+    cout<<" Data type  range"<< endl;
+    starline();
+    cout<<" char  -128 to 127"<< endl;
+    cout<<" short -32768 to 32767"<< endl;
+    cout<<" int   system dependent"<< endl;
+    cout<<" long  -2,147......"<< endl;
+    starline();
+    return 0;
+}
+void starline(){
+    for(int i=0;i<45; i++)
+    cout<<"*";
+    cout<< endl;
+    }
+
+//Fonksiyonlara Parametre Göndermek-sabit
+#include<iostream>
+using namespace std;
+void repchar(char,int);
+int main(){
+repchar('-',43);
+cout<<"Data type range"<<endl;
+repchar('=',43);
+cout<<" char  -128 to 127"<< endl;
+cout<<" short -32768 to 32767"<< endl;
+cout<<" int   system dependent"<< endl;
+cout<<" long  -2,147......"<< endl;
+repchar('-',43);
+return 0;
+}
+void repchar(char ch, int n){
+for(int i=0; i<n; i++)
+cout<< ch;
+cout<< endl;
+}
+
+//Fonksiyonlara Parametre Göndermek-değişken
+#include<iostream>
+using namespace std;
+
+
+void repchar(char ch, int n){
+    for(int i = 0; i < n; i++)
+        cout << ch;
+    cout << endl;
+}
+
+int main(){
+    char chin;
+    int nin;
+
+    cout << "enter a character: ";
+    cin >> chin;
+    cout << "enter number of times to repeat: ";
+    cin >> nin;
+    repchar(chin, nin); 
+    return 0;
+}

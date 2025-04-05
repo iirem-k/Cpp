@@ -1,0 +1,124 @@
+/* #include<iostream>
+using namespace std;
+
+struct part
+{
+   int ModelNumber;
+   int PartNumber;
+   float Cost;
+};
+int main(){
+    part part1;
+    part1.ModelNumber= 1234;
+    part1.PartNumber= 5678;
+    part1.Cost= 123.45;
+    cout<< "Model Number: "<< part1.ModelNumber<< endl;
+    cout<< "Part Number: "<< part1.PartNumber<< endl;
+    cout<< "Cost: "<< part1.Cost<< endl;
+} */ 
+/* #include<iostream>
+using namespace std;
+
+struct personel{
+    int kimlik;
+    string ad;
+    string soyad;
+    int yas;
+    float maas;
+};
+
+int main(){
+    personel bilgi;
+    bilgi.kimlik= 123456789;
+    bilgi.ad= "Ali";
+    bilgi.soyad= "Veli";
+    bilgi.yas= 30;
+    bilgi.maas= 5000.50;
+    cout<<"kimlik:"<<bilgi.kimlik<<endl;
+    cout<<"ad:"<<bilgi.ad<<endl;
+    cout<<"soyad:"<<bilgi.soyad<<endl;
+    cout<<"yas:"<<bilgi.yas<<endl;
+    cout<<"maas:"<<bilgi.maas<<endl;
+    return 0;
+} */
+/* 
+#include<iostream>
+using namespace std;
+
+struct part{
+    int modelnumber;
+    int postnumber;
+    float cost;
+};
+int main(){
+    part part1={222,333,444.5};
+    part part2;
+    cout<<"model"<< part1.modelnumber;
+    cout<<",part"<< part1.postnumber;
+    cout<<",cost"<< part1.cost<<endl;
+
+    part2= part1;
+    cout<<"model2: "<< part2.modelnumber;
+    cout<<" ,part2: "<< part2.postnumber;
+    cout<<" ,cost2: "<< part2.cost<<endl;
+    return 0;
+} */
+
+/* #include<iostream>
+using namespace std;
+
+struct Distance {
+    int feet;
+    float inches;
+};
+
+int main() {
+    Distance d1, d3;
+    Distance d2 = {11, 6.25};
+
+    cout << "Enter feet: ";
+    cin >> d1.feet;
+
+    cout << "Enter inches: ";
+    cin >> d1.inches;
+
+    // Inches toplama ve feet'e dönüştürme
+    d3.inches = d1.inches + d2.inches;
+    d3.feet = 0;
+    if (d3.inches >= 12.0) { // 12 inç = 1 fit
+        d3.inches -= 12.0;
+        d3.feet++;
+    }
+
+    // Feet toplama
+    d3.feet += d1.feet + d2.feet;
+
+    // Sonuçları yazdırma
+    cout << d1.feet << "\'-" << d1.inches << "\" + ";
+    cout << d2.feet << "\'-" << d2.inches << "\" = ";
+    cout << d3.feet << "\'-" << d3.inches << "\"" << endl;
+
+    return 0;
+} */
+/* #include<iostream>
+using namespace std;
+
+struct Distance {
+    int feet;
+    float inches;
+};
+struct Room{
+    Distance length;
+    Distance width;
+};
+int main(){
+    Room dining;
+    dining.length.feet=13;
+    dining.length.inches=6.25;
+    dining.width.feet=10;
+    dining.width.inches=0.0;
+    float l = dining.length.feet+ dining.length.inches/12;
+    float w = dining.width.feet+ dining.width.inches/12;
+    cout<<"dining room area is: "<< l*w << "square feet\n";
+    return 0;
+} */

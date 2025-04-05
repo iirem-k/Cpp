@@ -1,0 +1,108 @@
+#include <iostream>
+#include <string>
+#include <vector>  
+#include <iomanip> 
+using namespace std;
+
+struct Book {
+    string isbn;
+    string Baslik;
+    string Yazar;
+    int YayinYili;
+    float Fiyat;
+    bool StokDurum;
+};
+
+void addBook(vector<Book>& envanter) {
+    Book yeniKitap;
+    cout << "-----Yeni Kitap Ekle-----" << endl;
+    cout << "ISBN: ";
+    cin >> ws; // Boşlukları temizle
+    getline(cin, yeniKitap.isbn);
+    cout << "Başlık: ";
+    getline(cin, yeniKitap.Baslik);
+    cout << "Yazar: ";
+    getline(cin, yeniKitap.Yazar);
+    cout << "Yayın Yılı: ";
+    cin >> yeniKitap.YayinYili;
+    cout << "Fiyat: ";
+    cin >> yeniKitap.Fiyat;
+    cout << "Stok Durumu (1: Var, 0: Yok): ";
+    cin >> yeniKitap.StokDurum;
+    envanter.push_back(yeniKitap);
+    cout << "Tebrikler! Yeni kitap başarıyla eklendi!" << endl;
+}
+
+void listeKitap(const vector<Book>& envanter) {
+    if (envanter.empty()) {
+        cout << "Envanter boş!" << endl;
+        return;
+    }
+    cout << "---Kitap Envanteri---" << endl;
+    cout << left << setw(15) << "ISBN" << setw(25) << "Başlık" 
+         << setw(20) << "Yazar" << setw(6) << "Yıl" 
+         << setw(10) << "Fiyat" << "Stok" << endl;
+    cout << string(80, '-') << endl;
+    for (const auto& book : envanter) {
+        cout << setw(15) << book.isbn 
+             << setw(25) << book.Baslik.substr(0, 20) + (book.Baslik.length() > 20 ? "..." : "") 
+             << setw(20) << book.Yazar.substr(0, 15) + (book.Yazar.length() > 15 ? "..." : "") 
+             << setw(6) << book.YayinYili 
+             << setw(10) << fixed << setprecision(2) << book.Fiyat 
+             << (book.StokDurum ? "Var" : "Yok") << endl;
+    }
+}
+
+void StokGuncelleme(vector<Book>& envanter) {
+    cout << "-----Stok Güncelleme-----" << endl;
+    string searchISBN;
+    cout << "Güncellemek istediğiniz kitabın ISBN numarasını girin: ";
+    cin >> ws;
+    getline(cin, searchISBN);
+    for (auto& book : envanter) {
+        if (book.isbn == searchISBN) {
+            cout << "Mevcut stok: " << (book.StokDurum ? "Var" : "Yok") << endl;
+            cout << "Stok durumunu değiştir (1: Var, 0: Yok): ";
+            bool yeniDurum;
+            cin >> yeniDurum;
+            book.StokDurum = yeniDurum;
+            cout << "Stok güncellemesi başarıyla yapıldı!" << endl;
+            cout << "Yeni stok durumu: " << (book.StokDurum ? "Var" : "Yok") << endl;
+            return;
+        }
+    }
+    cout << "Kitap bulunamadı!" << endl;
+}
+
+int main() {
+    vector<Book> envanter;
+    char secim;
+    do {
+        cout << "-----Kitap Envanteri Yönetimi-----" << endl;
+        cout << "1. Kitap Ekle" << endl;
+        cout << "2. Kitap Listele" << endl;
+        cout << "3. Stok Güncelleme" << endl;
+        cout << "4. Çıkış" << endl;
+        cout << "Seçiminizi yapın (1-4): ";
+        cin >> secim;
+        cin.ignore(); // Girdi buffer'ını temizle
+
+        switch (secim) {
+            case '1':
+                addBook(envanter);
+                break;
+            case '2':
+                listeKitap(envanter);
+                break;
+            case '3':
+                StokGuncelleme(envanter);
+                break;
+            case '4':
+                cout << "Çıkış yapılıyor..." << endl;
+                break;
+            default:
+                cout << "Geçersiz seçim! Lütfen tekrar deneyin." << endl;
+        }
+    } while (secim != '4');
+    return 0;
+}

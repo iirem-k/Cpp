@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+class kimlik{
+    private:
+    long Tc;
+    string serino;
+    public:
+    string ad;
+    string soyad;
+    int yil;
+    void setdata(long tc, string sn){
+        Tc= tc;
+        serino= sn;
+    }
+    void gosterdata(){
+        cout<<"TC:"<<Tc<<endl;
+        cout<<"Seri No:"<<serino<<endl;
+    }
+};
+int main(){
+    kimlik k1;
+   
+    k1.ad="ahmet";
+    k1.soyad="yılmaz";
+    k1.yil=1990;
+    k1.setdata(21433424234, "A123456");
+    cout<<"--------TC Kimlik Kartı---------"<<endl;
+    k1.gosterdata();
+    cout<<"Ad: "<<k1.ad<<endl;
+    cout<<"Soyad: "<<k1.soyad<<endl;
+    cout<<"Doğum Yılı: "<<k1.yil<<endl;
+
+    return 0;
+}

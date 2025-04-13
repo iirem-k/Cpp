@@ -1,0 +1,233 @@
+/* #include<iostream>
+using namespace std;
+
+int main(){
+    int ftemp;
+    cout<<"ftemp değeri giriniz:";
+    cin>>ftemp;
+
+    int ctemp;
+    ctemp = (ftemp -32) * 5 /9;
+    cout<<"girilen fahrenhait değeri:"<<ftemp<<endl;
+    cout<<"hesaplanan celcious değeri:"<<ctemp<<endl;
+    return 0;
+} */
+/* #include<iostream>
+using namespace std;
+
+struct Sekil{
+    int kare;
+    int dikdortgen;
+    int ucgen;
+    int daire;
+};
+int main(){
+    Sekil sekil;
+    sekil.kare=5;
+    sekil.dikdortgen= 6;
+    sekil.ucgen=8;
+    sekil.daire=10;
+    const float pi=3.14;
+    cout<<"kare alanı:"<<sekil.kare*sekil.kare<<endl;
+    cout<<"dikdortgen alanı:"<<sekil.dikdortgen*sekil.dikdortgen<<endl;
+    cout<<"ucgen alanı:"<<sekil.ucgen*sekil.ucgen/2<<endl;
+    cout<<"daire alanı:"<<pi*sekil.daire*sekil.daire<<endl;
+   
+} */
+/* #include <iostream>
+using namespace std;
+struct paket{
+    string isim;
+    string soyisim;
+    int yas;
+    string meslek;
+    float deneyim;
+};
+int main(){
+    paket bilgi={"yılmaz","hayran", 45, "satici", 15.5};
+    cout<<"isim:"<<bilgi.isim<<endl;
+    cout<<"soyisim:"<<bilgi.soyisim<<endl;
+    cout<<"yas:"<<bilgi.yas<<endl;
+    cout<<"meslek:"<<bilgi.meslek<<endl;
+    cout<<"deneyim:"<<bilgi.deneyim<<endl;
+    return 0;
+} */
+/* 
+#include <iostream>
+using namespace std;
+void tekrarkarakter(char ch, int n){
+    for(int i=0; i<n; i++){
+        cout<<ch;
+       // cout<<endl;
+    }
+}
+int main(){
+    char chin;
+    int nin;
+    cout<<"karakter giriniz:"; cin>>chin;
+    cout<<"tekrar sayısını giriniz:"; cin>>nin;
+    tekrarkarakter(chin, nin);
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+
+struct Distance{
+    int feet;
+    float inches;
+};
+void engldisp(Distance dd){
+    cout<<dd.feet<<"/'-"<<dd.inches<<"\'"<<endl;
+}
+int main(){
+    Distance d1, d2;
+    cout<<"feet giriniz:"; cin>>d1.feet;
+    cout<<"inches giriniz:"; cin>>d1.inches;
+    cout<<"feet giriniz:"; cin>>d2.feet;
+    cout<<"inches giriniz:"; cin>>d2.inches;
+    cout<<"\nd1="; engldisp(d1);
+    cout<<"\nd2="; engldisp(d2);
+    return 0;
+} */
+/* #include<iostream>
+using namespace std;
+
+float kilogram(float agirlik,float lira){
+    float kg= agirlik * lira;
+    return kg;
+}
+int main(){
+    float tl,kg,agirlik;
+    cout<<"aldığınız ürünün fiyatı:"; cin>>tl;
+    cout<<"ürünün ağırlığı:"; cin>>agirlik;
+     kg = kilogram(agirlik,tl);
+    cout<<"hesap:"<<kg<<endl;
+    return 0;
+} */
+/* #include <iostream>
+#include<string>
+using namespace std;
+class MyClass{
+public :
+    int Mynum;
+    string Mystring;
+};
+int main(){
+    MyClass myObj;
+   // myObj.Mynum = 15;
+    cout<<"enter a number:"; cin>>myObj.Mynum;
+    cout<<"enter a string:"; cin>>myObj.Mystring;
+    cout<<myObj.Mynum<<" "<<myObj.Mystring<<endl;
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+class part{
+    private:
+        int modelnum;
+        int partnumb;
+        float cost;
+        public:
+        void setpart(int mn, int pn, float c){
+            modelnum=mn;
+            partnumb=pn;
+            cost=c;
+        }
+        void showpart(){
+            cout<<"model:"<<modelnum<<endl;
+            cout<<"part numarası:"<<partnumb<<endl;
+            cout<<"fiyat:"<<cost<<endl;
+        }
+};
+int main (){
+    part prt;
+    prt.setpart(1234, 5678, 100.50);
+    prt.showpart();
+    return 0;
+}
+ */
+/* #include <iostream>
+using namespace std;
+#ifndef VIZEONCESITUMDONEM_MAIN_PART_CPP
+#define VIZEONCESITUMDONEM_MAIN_PART_CPP
+class part{
+    private:
+        int modelnum;
+        int partnumb;
+        float cost;
+        public:
+        void setpart(int mn, int pn, float c){
+            modelnum=mn;
+            partnumb=pn;
+            cost=c;
+        }
+        void showpart(){
+            cout<<"model:"<<modelnum<<endl;
+            cout<<"part numarası:"<<partnumb<<endl;
+            cout<<"fiyat:"<<cost<<endl;
+        }
+};
+#endif
+#include <iostream>
+#include "vizeoncesitumdonem.cpp"
+
+using namespace std;
+
+int Main(){
+    part prt;
+    prt.setpart(1234, 5678, 100.50);
+    prt.showpart();
+    return 0;
+}
+ */
+#include <iostream>
+using namespace std;
+class Time{
+    public: 
+    Time(); // constructor
+    void setTime(int ,int, int);
+    void printMilitary();
+    void printStandard();
+    private:
+    int hour;  
+    int minute;
+    int second;
+};
+Time::Time(){   
+    hour= minute = second=0;
+}
+void Time::setTime(int h, int m, int s){
+    hour=(h>=0 && h<24) ? h : 0;
+    minute= (m>=0 && m<60) ? m : 0;
+    second= (s>=0 && s<60) ? s : 0; 
+}
+void Time::printMilitary(){
+    cout<<( hour<10 ? "0" : "")<<hour<<":"<<(minute<10 ? "0" : "")<<minute<<":";
+}
+void Time::printStandard(){
+    cout<<( (hour==0 || hour==12) ? 12 : hour%12)<<":"<<(minute<10 ? "0" : "")<<minute<<":"<<(second<10 ? "0" : "")<<second;
+    cout<<(hour<12 ? " AM" : " PM")<<endl;
+}
+int main(){
+    Time t;
+    cout<<"the initial military time is: ";
+    t.printMilitary();
+    cout<<"\nthe initial standard time is: ";
+    t.printStandard();
+    t.setTime(13, 27, 6);
+    cout<<"Military time after settime is: ";
+    t.printMilitary();
+    cout<<endl;
+    cout<<"Standard timeafter settime is: ";
+    t.printStandard();
+
+    t.setTime(99, 99, 99);  
+    cout<<"after attempting invakid setting: "<<"\nmilitary time: ";
+    t.printMilitary();
+    cout<<"\nstandard time: ";
+    t.printStandard();
+    cout<<endl;
+    return 0;
+}

@@ -12,6 +12,7 @@ int main(){
     cout<<"hesaplanan celcious değeri:"<<ctemp<<endl;
     return 0;
 } */
+----------------------
 /* #include<iostream>
 using namespace std;
 
@@ -34,6 +35,7 @@ int main(){
     cout<<"daire alanı:"<<pi*sekil.daire*sekil.daire<<endl;
    
 } */
+---------------------------
 /* #include <iostream>
 using namespace std;
 struct paket{
@@ -52,6 +54,7 @@ int main(){
     cout<<"deneyim:"<<bilgi.deneyim<<endl;
     return 0;
 } */
+---------------------------
 /* 
 #include <iostream>
 using namespace std;
@@ -69,7 +72,7 @@ int main(){
     tekrarkarakter(chin, nin);
     return 0;
 } */
-
+---------------------------
 /* #include <iostream>
 using namespace std;
 
@@ -90,6 +93,7 @@ int main(){
     cout<<"\nd2="; engldisp(d2);
     return 0;
 } */
+---------------------------
 /* #include<iostream>
 using namespace std;
 
@@ -105,6 +109,7 @@ int main(){
     cout<<"hesap:"<<kg<<endl;
     return 0;
 } */
+---------------------------
 /* #include <iostream>
 #include<string>
 using namespace std;
@@ -121,7 +126,7 @@ int main(){
     cout<<myObj.Mynum<<" "<<myObj.Mystring<<endl;
     return 0;
 } */
-
+---------------------------
 /* #include <iostream>
 using namespace std;
 class part{
@@ -148,6 +153,7 @@ int main (){
     return 0;
 }
  */
+---------------------------
 /* #include <iostream>
 using namespace std;
 #ifndef VIZEONCESITUMDONEM_MAIN_PART_CPP
@@ -182,6 +188,7 @@ int Main(){
     return 0;
 }
  */
+---------------------------
 #include <iostream>
 using namespace std;
 class Time{

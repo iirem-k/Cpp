@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sayi = 1, toplam = 0;
+    int a = 1;
+
+    while (a < 1000) {
+        sayi = a;
+        toplam = 0;
+
+        for (int i = 1; i < sayi; i++) { // Kendisi hariç bölenleri kontrol et
+            if (sayi % i == 0) {
+                toplam += i;
+            }
+        }
+
+        if (sayi == toplam) {
+            cout << a << " sayısı mükemmel sayıdır." << endl;
+        }
+
+        a++;
+    }
+
+    return 0;
+}

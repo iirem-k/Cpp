@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main() {
+	int sayi, bir, on, yuz, bin, onbin;
+	//1232 1
+	int i =10000;
+	while(i<100000) {
+		sayi = i;
+		
+		bir = sayi% 10;
+		
+		sayi=(sayi/10);
+		on = sayi%10;
+		
+		sayi=(sayi/10);
+		yuz = sayi%10;
+		
+		sayi=(sayi/10);
+		bin = sayi%10;	
+		
+		sayi=(sayi/10);
+		onbin = sayi;
+		
+		if(bir==onbin && on==bin ){
+			cout<<i<<"palindromdur."<<endl;}
+		i++;
+	}
+	return 0;
+}

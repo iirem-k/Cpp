@@ -1,0 +1,504 @@
+/* #include <iostream>
+using namespace std;
+ class part{
+    private:
+        int modelnumber, partnumber;
+        float cost;
+    public:
+    void setpart(int mn, int pn, float c){
+        modelnumber =mn;
+        partnumber = pn;
+        cost= c;
+    }
+    void getpart(){
+        cout<<"model num gir:"; cin>>modelnumber;
+        cout<<"part num gir:"; cin>> partnumber;
+        cout<<"cost gir:"; cin>>cost;
+    }
+    void showpart(){
+        cout<<"model num:"<<modelnumber<<endl;
+        cout<<"part num:"<<partnumber<< endl;
+        cout<<"cost:"<<cost<<endl;
+    }
+ };
+ int main(){
+    part part1;
+    part1.getpart();
+    part1.showpart();
+    return 0;
+}; */
+
+/* 
+#include <iostream>
+using namespace std;
+float satişbilgi(){
+float fiyat = 10.5;
+return fiyat;
+};
+
+int main(){
+    float fiyat;
+    int adet;
+    cout<<"adet gririn: "; cin>>adet;
+    fiyat = satişbilgi();
+    cout<<" toplam tutar: "<< fiyat* adet<< endl;
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+class tarih{
+    public:
+        tarih();
+        int yil, ay, gun;
+        void print();
+};
+void tarih::print(){
+    cout<<gun<<"-"<<ay<<"-"<<yil<<endl;;
+}
+
+tarih:: tarih(){ yil=2020; ay=1; gun=1;}
+
+class personel{
+    public: 
+        string ad, soyad;
+        tarih dogumtarihi;
+        void print();
+};
+
+void personel::print(){
+    cout<<ad<<" "<<soyad<<" "<<dogumtarihi.gun<<"-"<<dogumtarihi.ay<<"-"<<dogumtarihi.yil<<endl;
+}
+
+int main(){
+    tarih t;
+    t.yil= 1990;
+    t.ay=10;
+    t.gun=9;
+    t.print();
+
+    personel p;
+    p.ad= "kader";
+    p.soyad= "gülçin";
+    p.print();
+}
+ */
+
+ // kalıtım
+/* #include <iostream>
+using namespace std ;
+
+// base class
+class vehicle{
+public:
+vehicle(){
+    cout<<"this is a vehicle"<<endl;
+}};
+
+// sub class derived from two base classes
+class car: public vehicle{
+
+};
+
+// main function
+int main(){
+    car obj;
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+
+// first base class
+class vehicle{
+    public:
+    vehicle(){
+        cout<<"this is a vehicle"<<endl;
+    }
+};
+
+// second base class
+class fourwheeler{
+    public:
+    fourwheeler(){
+        cout<<"this is fourwheeler";
+    }
+};
+
+// sub clas derived from two base classes
+class car : public vehicle, public fourwheeler{};
+
+int main(){
+    car onj;
+    return 0;
+} */
+
+
+
+
+/* #include <iostream>
+using namespace std;
+
+class toplama{
+    public:
+toplama(int a, int b){
+    cout<<"toplama:"<<a+b<<endl;
+}
+};
+
+class carpma{
+    public:
+    carpma(int a, int b){
+        cout<<"çarpma:"<<a*b<<endl;
+    }
+};
+
+class islem : public toplama, public carpma{
+    public:
+    islem(int a, int b) : toplama(a,b), carpma(a,b){} //(initializer list) 
+};
+
+int main(){
+    int a=4, b=6;
+    islem is(a,b);
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+// base class
+class shape{
+    protected:
+    int width;
+    int height;
+
+    public:
+    void setwidth(int w){
+        width =w;
+    }
+    void setheight(int h){
+        height = h;
+    }
+};
+
+// derived class
+class rectangle : public shape{
+    public:
+    int getarea(){
+        return ( width * height);
+    }
+};
+
+int main(void){
+    rectangle rect;
+    rect.setwidth(5);
+    rect.setheight(7);
+
+    cout<<"total area:"<<rect.getarea()<<endl;
+    return 0;
+}
+ */
+
+/* #include <iostream>
+using namespace std;
+
+class animal{
+    public:
+    void eat(){
+        cout<<"eating..."<<endl;
+    }
+};
+
+class dog: public animal{
+    public:
+    void bark(){
+        cout<<"barking..";
+    }
+};
+
+int main(void){
+    dog d1;
+    d1.eat();
+    d1.bark();
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+class teacher {
+public:
+teacher(){
+    cout<<"hey guys, ı am a teacher"<<endl;
+}
+string collagename = "beginnersbook";
+};
+
+class mathteacher : public teacher{
+    public: 
+    mathteacher(){
+        cout<<"ı am a math teacher"<<endl;
+    }
+    string mainsub="math";
+    string name = "negan";
+};
+
+int main(){
+    mathteacher mt;
+    cout<<"name: "<<mt.name<<endl;
+    cout<<"collage name: "<<mt.collagename<<endl;
+    cout<<"main subject: "<< mt.mainsub;
+    return 0;
+}
+ */
+
+/* #include <iostream>
+#include <string>
+using namespace std;
+class temel{
+    public:
+    string ad, soyad;
+    int yas;
+    void sorgu(){
+        cout<<"adınız= \n"; cin>>ad;
+        cout<<"soyadınız= \n"; cin>>soyad;
+        cout<<"yaşınız= \n"; cin>>yas;
+    }
+};
+class turetilmis : public temel{};
+
+int main(){
+    turetilmis t;
+    t.sorgu();
+    system("pause");
+    return 0;
+} */
+
+
+/* #include <iostream>
+using namespace std;
+
+class save{
+protected :
+            int xindegeri;
+            int ynindegeri;
+public:
+        void setSave(int x, int y){
+            xindegeri =x;
+            ynindegeri= y;
+        }
+        void showSave(){
+            cout<<"x'in değeri:"<<xindegeri<<endl;
+            cout<<"y'nin değeri:"<<ynindegeri<<endl;
+        }
+};
+
+int main(){
+    save s;
+    s.setSave(4,5);
+    s.showSave();
+    return 0;
+}*/
+/* #include <iostream>
+using namespace std;
+
+class MyClass{
+    private:
+            int x;
+    public:
+            friend void friendfunc(MyClass obj); 
+};
+
+void friendfunc(MyClass obj){
+    obj.x=10;
+}
+int main(){
+    MyClass 
+}
+ */
+
+/* #include <iostream>
+using namespace std;
+class Count{
+    private:
+         int x;
+    public:
+        friend void setX(Count &c, int val );
+    Count(){
+        x=0;}
+    void print() const{
+        cout<<x<<endl;
+    }
+};
+    void setX(Count &c,int val ){
+        c.x=val;
+    }
+int main(){
+    Count counter;
+    cout<<"counter.x başladıktan sonraki değeri:";
+    counter.print();
+
+    cout<<"setX friend fonk çağırıldıktan sonra counter.x'in değeri:";
+    setX(counter,8);
+    counter.print();
+    return 0;
+} */
+
+/* #include <iostream>
+using namespace std;
+class ogrenci{
+    private:
+        string ad;
+        int dersnotu;
+    public:
+    ogrenci (string adi, int notu){
+        ad = adi;
+        dersnotu = notu;
+        cout<<ad<<"adli öğrenci oluşturuldu, notu:"<<notu<<endl;
+    }
+    void bilgilerigoster() const{
+        cout<<ad<<"(not gizli)"<<endl;
+    }
+    friend void ogretmennotudegistir(ogrenci &ogrenciobj, int yeninot); 
+};
+
+void ogretmennotudegistir(ogrenci &ogrenciobj, int yeninot){
+    cout<<"\nogretmen:"<<ogrenciobj.ad<<"'in eski notu:"<<ogrenciobj.dersnotu<<endl;
+    ogrenciobj.dersnotu= yeninot;
+    cout<<"\nogretmen:"<<ogrenciobj.ad<<"'in yeni notu:"<<yeninot<<" olarak güncellendi."<<endl;
+}
+int main(){
+    ogrenci 
+    ali("ali",75), ayse("ayşe",90);
+    cout<<"--başlangıç bilgileri--";
+    ali.bilgilerigoster();
+    ayse.bilgilerigoster();
+
+    cout<<"--öğretmen notu güncelliyor--";
+    ogretmennotudegistir(ali,89);
+    ogretmennotudegistir(ayse,100);
+
+    cout<<"---güncel bilgiler---"<<endl;
+    ali.bilgilerigoster();
+    ayse.bilgilerigoster();
+} */
+
+/* #include <iostream>
+using namespace std;
+class box{
+    public:
+    box(double l=2.0, double b=2.0, double h= 2.0){
+        cout<<"constructor called."<<endl;
+        length = l;
+        breadth = b;
+        height = h;
+    }
+    double volume(){
+        return length*breadth*height;
+    }
+    int compare(box boxobj){
+        return this->volume() > boxobj.volume();
+    }
+    private:
+    double length;
+    double breadth;
+    double height;
+};
+int main(void){
+box box1(3.3,1.2,1.5);
+box box2(8.5,6.0,2.0);
+
+if(box1.compare(box2)){
+    cout<<"box2 is smaller than box1"<<endl;
+}
+else{
+    cout<<"box2 is equal to or larger than box1 ";
+}
+return 0;
+}
+ */
+
+/* #include <iostream>
+using namespace std;
+class Box{
+
+    friend void printwidth(Box box);
+
+    private:
+    double width;
+    public:
+    void setwidth(double wid);
+};
+
+void Box:: setwidth(double wid){
+    width =wid;
+};
+void printwidth(Box box){
+    cout<<"kutunun genişliği: "<<box.width<<endl;
+}
+int main(){
+    Box box;
+    box.setwidth(10.0);
+
+    printwidth(box);
+    return 0;
+} */
+
+
+/* #include <iostream>
+using namespace std;
+class ad{
+    friend void showad(ad a){
+    cout<<"şahsın adı: "<<a.ad<<endl;
+}
+friend void gosterge(ad a);
+    private:
+    string ad;
+    public: int yas;
+
+    void setad(string a){
+        ad=a;
+    }
+    void getad(){
+        cout<<"adınız: "; cin>>ad;
+    }
+    /* void showad(){
+        cout<<"şahsın adı: "<<ad<<endl;
+    } 
+};
+void gosterge(ad a){
+    cout<<"kişinin adı: "<<a.ad<<endl;
+}
+
+int main(){
+ad a;
+a.getad();
+//a.showad();
+showad(a);
+gosterge(a);
+return 0;
+}
+ */
+/* #include <iostream>
+using namespace std;
+class A{
+    private:
+    int a;
+    public:
+    A (){a =0;}
+    friend class B; // B sınıfına A sınıfının private üyelerine erişim izni verildi
+};
+class B{
+  private :
+   int b;
+  public:
+    void showA(A a_uye){
+        cout<<"A sınıfının private üyesi a: "<<a_uye.a<<endl;
+    }
+};
+int main(){
+    A a;
+    B b;
+    b.showA(a);
+    return 0;
+}
+ */
